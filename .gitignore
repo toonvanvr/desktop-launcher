@@ -1,0 +1,6 @@
+# Application
+dist
+node_modules
+
+# IDE
+.vscode
