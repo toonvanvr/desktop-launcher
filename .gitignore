@@ -4,3 +4,6 @@ node_modules
 
 # IDE
 .vscode
+
+#Electron-builder output
+/dist_electron
