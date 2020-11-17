@@ -1,4 +1,8 @@
 body {
-  background: yellow;
+  background: white;
   font-family: Arial, Helvetica, sans-serif;
+}
+p {
+  align-self: center;
+  text-align: center;
 }
