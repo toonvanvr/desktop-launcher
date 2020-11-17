@@ -5,10 +5,8 @@ const desktopUrl = joinPath(__dirname + '../../../static/index.html')
 
 export class Application {
   window = {
-    desktop: null as BrowserWindow | null,
+    desktop: null as BrowserWindow | null
   }
-
-  constructor() {}
 
   async launch(): Promise<void> {
     await app.whenReady()
@@ -18,7 +16,7 @@ export class Application {
   openDesktopWindow(): void {
     if (!this.window.desktop) {
       this.window.desktop = new BrowserWindow({
-        show: false,
+        show: false
       })
       this.window.desktop.loadFile(desktopUrl)
       this.window.desktop.on('ready-to-show', () => this.window.desktop?.show())
