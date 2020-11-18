@@ -1,7 +1,7 @@
 import { createApp } from 'vue'
-import App from './App.vue'
+import Desktop from './window/desktop/Desktop.vue'
 import store from './store'
 
-createApp(App)
+createApp(Desktop)
   .use(store)
   .mount('#app')

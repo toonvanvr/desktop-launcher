@@ -1,3 +1,4 @@
+// Overwrite the `process.env` typing
 declare global {
   namespace NodeJS {
     interface ProcessEnv {
@@ -9,14 +10,17 @@ declare global {
   }
 }
 
+// Check which staging environment you are in with the `MODE` variable
 enum StagingEnvironment {
   // development = 'development',
   // test = 'test',
   production = 'production'
 }
+
 const env = process.env
 const isProduction = env.NODE_ENV === StagingEnvironment.production
 const isTest = env.IS_TEST
+
 export const MODE = {
   development: !isProduction && !isTest,
   testing: isTest,
