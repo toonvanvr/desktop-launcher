@@ -1,4 +1,7 @@
-import { Application } from './app/application'
+import { createApp } from 'vue'
+import App from './App.vue'
+import store from './store'
 
-const app = new Application()
-app.launch()
+createApp(App)
+  .use(store)
+  .mount('#app')

@@ -1,8 +1,7 @@
 module.exports = {
   root: true,
   env: {
-    node: true,
-    es2020: true
+    node: true
   },
   extends: [
     'plugin:vue/vue3-essential',
@@ -17,6 +16,8 @@ module.exports = {
   rules: {
     'prettier/prettier': 'error',
     '@typescript-eslint/no-empty-function': 'off',
+    'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
+    'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     'linebreak-style': ['error', 'unix'],
     'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
