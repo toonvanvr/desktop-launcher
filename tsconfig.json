@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
-    "target": "esnext",
+    // ES2020 fails to build when using webpack <5
+    "target": "es2019",
     "module": "esnext",
     "strict": true,
     "jsx": "preserve",
