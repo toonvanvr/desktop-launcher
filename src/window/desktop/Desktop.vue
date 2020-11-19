@@ -6,12 +6,14 @@
 <script lang="ts">
 import { Options, Vue } from 'vue-class-component'
 import Launcher from './components/Launcher.vue'
+import Icon from './components/Icon.vue'
 import WindowHandle from './components/WindowHandle.vue'
 
 @Options({
   components: {
     Launcher,
-    WindowHandle
+    WindowHandle,
+    Icon
   }
 })
 export default class Desktop extends Vue {}

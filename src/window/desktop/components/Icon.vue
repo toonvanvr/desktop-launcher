@@ -7,17 +7,19 @@
 </template>
 <script lang="ts">
 import Vue from 'vue'
-// Declare tha variable
-export default {
+new Vue({
+  el: '#icon',
   data: function() {
     return {
       icon: ''
     }
   },
   methods: {
-    showIcon: function() {
-      this.icon = '../../assets/utilities-terminal.svg' // Get the icon from the assets folder
+    showFunction: function() {
+      this.icon(
+        'https://raw.githubusercontent.com/toonvanvr/desktop-launcher/sandbox/icon/src/assets/utilities-terminal.svg'
+      )
     }
   }
-}
+})
 </script>
