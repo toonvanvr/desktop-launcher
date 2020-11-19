@@ -14,7 +14,7 @@ declare global {
 enum StagingEnvironment {
   // development = 'development',
   // test = 'test',
-  production = 'production'
+  production = 'production',
 }
 
 const env = process.env
@@ -24,5 +24,5 @@ const isTest = env.IS_TEST
 export const MODE = {
   development: !isProduction && !isTest,
   testing: isTest,
-  production: isProduction
+  production: isProduction,
 }

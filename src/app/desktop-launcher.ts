@@ -20,8 +20,8 @@ export class DesktopLauncherApplication {
         frame: false,
         webPreferences: {
           // Configure me in vue.config.js
-          nodeIntegration: process.env.ELECTRON_NODE_INTEGRATION
-        }
+          nodeIntegration: process.env.ELECTRON_NODE_INTEGRATION,
+        },
       })
 
       // Load the main page
@@ -52,14 +52,14 @@ export class DesktopLauncherApplication {
                 {
                   role: 'toggleDevTools',
                   click: () =>
-                    this.desktop?.webContents.openDevTools({ mode: 'detach' })
-                }
-              ]
-            }
-          ]
+                    this.desktop?.webContents.openDevTools({ mode: 'detach' }),
+                },
+              ],
+            },
+          ],
         },
-        { role: 'quit' }
-      ])
+        { role: 'quit' },
+      ]),
     )
     return this.tray
   }
