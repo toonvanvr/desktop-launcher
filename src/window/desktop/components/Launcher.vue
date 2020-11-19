@@ -6,7 +6,7 @@
 import { Options, Vue } from 'vue-class-component'
 
 @Options({})
-export default class HelloWorld extends Vue {}
+export default class Launcher extends Vue {}
 </script>
 
 <style scoped lang="stylus">
