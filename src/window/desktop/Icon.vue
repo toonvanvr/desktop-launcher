@@ -1,7 +1,7 @@
 <!-- I have no idea what I'm doing -->
 <template>
   <div id="icon">
-    <p v-if="image.legnth > 0"><img v-bind:src="icon" /></p>
+    <p v-if="icon.legnth > 0"><img v-bind:src="icon" /></p>
     <button @click="showIcon()">Show the SVG!</button>
   </div>
 </template>
@@ -16,7 +16,7 @@ export default {
   },
   methods: {
     showIcon: function() {
-      this.icon = './' /* Stuck here, how do i do this? */
+      this.icon = '../../assets/utilities-terminal.svg' // Get the icon from the assets folder
     }
   }
 }
