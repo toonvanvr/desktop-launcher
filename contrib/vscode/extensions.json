@@ -1,0 +1,15 @@
+{
+  "recommendations": [
+    "aaron-bond.better-comments",
+    "basarat.god",
+    "dbaeumer.vscode-eslint",
+    "eamodio.gitlens",
+    "esbenp.prettier-vscode",
+    "ghmcadams.lintlens",
+    "kodetech.electron-debug",
+    "mhutchie.git-graph",
+    "octref.vetur",
+    "sysoev.language-stylus",
+    "VisualStudioExptTeam.vscodeintellicode"
+  ]
+}
