@@ -1,6 +1,7 @@
 import { BrowserWindow, Menu, Tray } from 'electron'
 import { createProtocol } from 'vue-cli-plugin-electron-builder/lib'
 import { join } from 'path'
+import { Windows } from './helpers'
 
 export class DesktopLauncherApplication {
   tray: Tray | null = null
@@ -14,15 +15,48 @@ export class DesktopLauncherApplication {
     // Allow only one instance
     if (!this.desktop) {
       this.desktop = new BrowserWindow({
-        width: 500,
-        height: 500,
+        // width: 500,
+        // height: 500,
+
+        // Window options
+        acceptFirstMouse: true,
+        movable: false,
+        focusable: true,
+        closable: false,
+        resizable: false,
+
+        // Transparency related options -- keep these grouped to allow for easy debugging
         transparent: true,
+        fullscreen: true,
+        hasShadow: false,
+        // > some envs see RGB=0 + A=0 as black instead of transparent
+        backgroundColor: '#01010100',
+
+        // May not be required
         frame: false,
+
+        // Trigger on 'ready-to-show' to avoid flickering
+        // show: false,
+        paintWhenInitiallyHidden: true,
+
+        // Security settings
         webPreferences: {
-          // Configure me in vue.config.js
+          backgroundThrottling: false,
+          // > vue.config.js
           nodeIntegration: process.env.ELECTRON_NODE_INTEGRATION,
         },
+
+        // To check
+        // - kiosk
+        // - skipTaskbar
+        // - simpleFullscreen
+        // - type
+        // - thickFrame
+        // - titleBarStyle
+        // - visualEffectState
       })
+      Windows.setBottomMost(this.desktop.getNativeWindowHandle())
+      // this.desktop.on('ready-to-show', () => this.showDesktopWindow())
 
       // Load the main page
       if (process.env.WEBPACK_DEV_SERVER_URL) {

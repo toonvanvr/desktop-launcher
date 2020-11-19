@@ -1,5 +1,7 @@
 <template>
-  <div class="launcher"></div>
+  <div class="launcher">
+    <input type="text" />
+  </div>
 </template>
 
 <script lang="ts">

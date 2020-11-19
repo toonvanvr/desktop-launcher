@@ -11,8 +11,8 @@ import WindowHandle from './components/WindowHandle.vue'
 @Options({
   components: {
     Launcher,
-    WindowHandle
-  }
+    WindowHandle,
+  },
 })
 export default class Desktop extends Vue {}
 </script>
