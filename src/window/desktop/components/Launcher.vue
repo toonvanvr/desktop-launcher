@@ -14,6 +14,8 @@ export default class Launcher extends Vue {}
 <style scoped lang="stylus">
 
 .launcher
+  pointer-events: all
+
   margin: 25px
   width: 100px
   height: 100px

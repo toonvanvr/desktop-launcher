@@ -1,37 +1,41 @@
-import { BrowserWindow } from 'electron'
+import { app, BrowserWindow } from 'electron'
 import installExtension, { VUEJS_DEVTOOLS } from 'electron-devtools-installer'
 import { OS } from '.'
 import { nothing } from './typescript'
+import { join as pjoin } from 'path'
+
+export function publicFile(relPath: string): string {
+  return pjoin(__static, relPath)
+}
 
 export async function installVueDevTools(): Promise<void> {
   try {
-    await installExtension(VUEJS_DEVTOOLS)
+    // await installExtension(VUEJS_DEVTOOLS) // this doesn't work with vue 3 yet
+    // installExtension('ljjemllljcmogpfapbkkighbhhppjdbg') // vuejs beta
   } catch (e) {
     console.error('Vue Devtools failed to install:', e.toString())
   }
 }
 
 export async function toggleShow(
-  window: BrowserWindow | nothing,
+  nativeWindow: BrowserWindow | nothing,
   {
     bottom = false,
     show = null,
   }: { bottom?: boolean; show?: boolean | null } = {},
-): Promise<boolean> {
-  if (!window) return false
+): Promise<void> {
+  if (!nativeWindow) return
 
   if (show === null) {
-    show = !window.isVisible()
+    show = !nativeWindow.isVisible()
   }
 
   if (show) {
-    window.show()
+    nativeWindow.show()
     if (bottom) {
-      await OS.glueToDesktop(window)
+      await OS.glueToDesktop(nativeWindow)
     }
-    return true
   } else {
-    window.hide()
-    return true
+    nativeWindow.hide()
   }
 }

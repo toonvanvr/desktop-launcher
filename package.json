@@ -17,8 +17,13 @@
   },
   "main": "background.js",
   "dependencies": {
+    "@types/ffi-napi": "^2.4.3",
+    "@types/ref-napi": "^1.4.1",
     "babel-plugin-async-import": "^2.1.0",
     "core-js": "^3.6.5",
+    "ffi-napi": "^3.0.1",
+    "ref-napi": "^3.0.1",
+    "ref-struct-napi": "^1.1.1",
     "vue": "^3.0.0",
     "vue-class-component": "^8.0.0-0",
     "vuex": "^4.0.0-0"

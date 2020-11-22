@@ -27,6 +27,4 @@ export default class Desktop extends Vue {}
 
   width: 100vw
   height: 100vh
-
-  background-color: #00000040
 </style>
