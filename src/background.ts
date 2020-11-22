@@ -16,7 +16,7 @@ protocol.registerSchemesAsPrivileged([
 // Some APIs can only be used after this event occurs.
 app.on('ready', async () => {
   if (MODE.development) {
-    await installVueDevTools()
+    // await installVueDevTools() -- bugged?
   }
 
   await launcherApp.launch()
